@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Blackjack</h1>
+
+    <!-- Login screen -->
+    <div id="login-screen">
+      <h2>Log in or register</h2>
+      <input id="username" type="text" placeholder="Username" />
+      <input id="password" type="password" placeholder="Password" />
+      <button id="login-btn">Log in</button>
+      <button id="register-btn">Register</button>
+      <p id="login-message"></p>
+    </div>
+
+    <!-- Game screen (hidden until you log in) -->
+    <div id="game-screen" hidden>
+      <div class="user-info">
+        <p>Logged in as: <span id="current-user"></span></p>
+        <p>Pot: <span id="pot"></span> kr</p>
+      </div>
+
+      <!-- The table: dealer, message, player -->
+      <div class="table">
+        <div id="dealer-area">
+          <div class="label">
+            <h2>Dealer</h2>
+            <p id="dealer-score"></p>
+          </div>
+          <div id="dealer-cards"></div>
+        </div>
+
+        <p id="message"></p>
+
+        <div id="player-area">
+          <div class="label">
+            <h2>You</h2>
+            <p id="player-score"></p>
+          </div>
+          <div id="player-cards"></div>
+        </div>
+      </div>
+
+      <!-- Right side: bet area OR Hit/Stand -->
+      <div class="side-panel">
+        <div id="bet-area">
+          <h2>Place your bet</h2>
+          <p class="popup-pot">Pot: <span id="popup-pot"></span> kr</p>
+          <input id="bet" type="number" min="1" value="100" />
+          <button id="deal-btn">Deal</button>
+          <button id="refill-btn" hidden>Top up the pot</button>
+          <p id="bet-message"></p>
+        </div>
+
+        <div id="controls" hidden>
+          <button id="hit-btn">Hit</button>
+          <button id="stand-btn">Stand</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
